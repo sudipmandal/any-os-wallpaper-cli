@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace wallpaper
 {
@@ -6,9 +8,11 @@ namespace wallpaper
     {
         static void Main(string[] args)
         {
+
             if(args.Length == 0)
             {
                 //Select a random source and set wallpaper
+                Wallpaper.SetWallpaperFromSource(Common.Utils.sourceMap.Keys.First());
             }
             else
             {
@@ -18,7 +22,11 @@ namespace wallpaper
                         //display help
                         break;
                     case "-ls":
-                        //list sources
+                        Console.WriteLine("Available Sources :");
+                        foreach (var sourceName in Common.Utils.sourceMap.Keys)
+                        {
+                            Console.WriteLine("\t" + sourceName);
+                        }
                         break;
                     case "-u":
                         //set wallpaper from specified source

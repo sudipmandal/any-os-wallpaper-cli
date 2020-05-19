@@ -20,7 +20,7 @@ namespace Platform
 
         public void SetWallpaper(string filePath)
         {
-            string windowsBmpPath = Utils.GetExeFolder() + "/wallpaper.bmp";
+            string windowsBmpPath = Path.GetFileNameWithoutExtension(filePath) + ".bmp";
             using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
                 using (var image = new Bitmap(fs))

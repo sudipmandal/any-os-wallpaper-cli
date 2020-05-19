@@ -7,5 +7,11 @@ namespace Common
         /// </summary>
         /// <returns>File path of the downloaded wallpaper</returns>
         public string DownloadWallpaper();
+
+        /// <summary>
+        /// Returns the name of this source
+        /// </summary>
+        /// <returns>Name of the source</returns>
+        public string Name();
     }
 }
