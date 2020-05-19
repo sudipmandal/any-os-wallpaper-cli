@@ -15,12 +15,12 @@ namespace Platform
         const int SPIF_UPDATEINIFILE = 0x01;
         const int SPIF_SENDWININICHANGE = 0x02;
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        [DllImport("user32", CharSet = CharSet.Auto)]
         static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
 
         public void SetWallpaper(string filePath)
         {
-            string windowsBmpPath = Path.GetFileNameWithoutExtension(filePath) + ".bmp";
+            string windowsBmpPath = Path.GetDirectoryName(filePath) + "/wallpaper.bmp";
             using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
                 using (var image = new Bitmap(fs))
