@@ -36,5 +36,4 @@ For eg (for debian/ubuntu/deepin desktops the script.sh could look like below)
 
 `gsettings set org.gnome.desktop.background picture-uri $1`
 
-here $1 will be the path of the image downloaded by wallpaper.
 
