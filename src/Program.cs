@@ -12,7 +12,7 @@ namespace wallpaper
             if(args.Length == 0)
             {
                 //Select a random source and set wallpaper
-                Wallpaper.SetWallpaperFromSource(Common.Utils.sourceMap.Keys.First());
+                Wallpaper.SetWallpaperFromSource("RandomFromWeb");
             }
             else
             {
@@ -28,8 +28,23 @@ namespace wallpaper
                             Console.WriteLine("\t" + sourceName);
                         }
                         break;
-                    case "-u":
+                    case "-s":
                         //set wallpaper from specified source
+                        if (args.Length < 2)
+                            Console.WriteLine("Source not specified");
+                        else if (args.Length > 2)
+                            Console.WriteLine("Invalid number of arguments\n correct format is wallpaper -s SOURCENAME");
+                        else
+                        {
+                            string usrSel = args[1];
+                            //check if this is a valid source name
+                            if (!Common.Utils.sourceMap.Keys.Contains(usrSel))
+                                Console.WriteLine("Soruce {0} not found. \n To view list of valid sources run : wallpaper -ls");
+                            else
+                                Wallpaper.SetWallpaperFromSource(usrSel);
+                        }
+                        
+                        break;
                     default:
                         //display help
                         break;

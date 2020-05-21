@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Linq;
+using System.Net;
 
 namespace Common
 {
@@ -27,6 +28,15 @@ namespace Common
             UriBuilder uri = new UriBuilder(codeBase);
             string path = Uri.UnescapeDataString(uri.Path);
             return Path.GetDirectoryName(path);
+        }
+
+        internal static string DownloadUrlToDisk(string url)
+        {
+            WebClient wc = new WebClient();
+            string pathToSave = Utils.GetExeFolder() + "/wallpaper.jpg";
+            wc.DownloadFile(url, pathToSave);
+
+            return pathToSave;
         }
 
         static Dictionary<string,Type> GetSourcesMap()

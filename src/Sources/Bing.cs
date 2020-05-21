@@ -15,10 +15,9 @@ namespace Sources
 
             JObject result = JObject.Parse(jsonString);
             string imgURL = "http://bing.com" + result["images"][0]["url"].ToString();
-            string pathToSave = Utils.GetExeFolder() + "/wallpaper.jpg";
-            wc.DownloadFile(imgURL, pathToSave);
+            
 
-            return pathToSave;
+            return Utils.DownloadUrlToDisk(imgURL);
         }
 
         public string Name()
