@@ -25,6 +25,8 @@ Due to the hundreds of desktop environments for linux, the program may simply be
 - Ensure the file is executable and run wallpaper again... Viola it should now work for your desktop.
 
 For eg (for debian/ubuntu/deepin desktops the script.sh could look like below)
+
 `gsettings set org.gnome.desktop.background picture-uri $1`
+
 here $1 will be the path of the image downloaded by wallpaper.
 
