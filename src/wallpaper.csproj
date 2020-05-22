@@ -20,6 +20,7 @@
    <ItemGroup>
     <None Update="config.json">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+          <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       </None>
   </ItemGroup>
   <ItemGroup>
