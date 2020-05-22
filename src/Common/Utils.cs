@@ -4,11 +4,28 @@ using System.IO;
 using System.Reflection;
 using System.Linq;
 using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace Common
 {
     public class Utils
     {
+        internal static JObject GetConfig()
+        {
+            var configPath  = Utils.GetExeFolder() + "/config.json";
+            if(File.Exists(configPath))
+            {
+                try
+                {
+                    JObject configObj = JObject.Parse(File.ReadAllText(configPath));
+                    return configObj;
+                    
+                }
+                catch {}
+            }
+            return null;
+        }
+
         private static Dictionary<string,Type> _sourceMap;
         public static Dictionary<string,Type> sourceMap { get{
             if(_sourceMap == null)

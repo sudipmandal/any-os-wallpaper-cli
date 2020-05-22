@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
 using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
 namespace Sources
 {
@@ -14,7 +15,21 @@ namespace Sources
 
         public string DownloadWallpaper()
         {
+            //Get topics either from external config or internal array
+            var config = Utils.GetConfig();
+            if(config != null)
+            {
+                try
+                {
+                    JArray extTopics = JArray.FromObject( config["Sources"]["RandomFromWeb"]["topics"]);
+                    this.topics = extTopics.Select(x => x.ToString()).ToArray();
+                }
+                catch { }
+                
+            }
+
             //Pick a random item from the topics array
+
             Random randomGen = new Random();
             int topicNo = randomGen.Next(0, topics.Length - 1);
             string topic = topics[topicNo];

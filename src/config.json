@@ -1,0 +1,19 @@
+{
+    "Sources" :{
+        "RandomFromWeb" : {
+            "topics" : [
+                "Mountains",
+                "Awesome Wallpapers",
+                "Wallpaper of the day",
+                "Birds",
+                "Nature",
+                "Space",
+                "Rivers",
+                "Sunset",
+                "Animals",
+                "Abstract Nature",
+                "Aurora"
+            ]
+        }
+    }
+}
