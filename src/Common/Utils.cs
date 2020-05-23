@@ -41,10 +41,16 @@ namespace Common
 
         internal static string GetExeFolder()
         {
+#if DEBUG
+           
             string codeBase = Assembly.GetExecutingAssembly().CodeBase;
             UriBuilder uri = new UriBuilder(codeBase);
             string path = Uri.UnescapeDataString(uri.Path);
             return Path.GetDirectoryName(path);
+#else
+            return Environment.CurrentDirectory;
+#endif
+
         }
 
         internal static string DownloadUrlToDisk(string url)
