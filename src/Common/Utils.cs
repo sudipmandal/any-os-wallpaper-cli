@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Linq;
 using System.Net;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 
 namespace Common
 {
@@ -48,7 +49,7 @@ namespace Common
             string path = Uri.UnescapeDataString(uri.Path);
             return Path.GetDirectoryName(path);
 #else
-            return Environment.CurrentDirectory;
+            return Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
 #endif
 
         }

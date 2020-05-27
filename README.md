@@ -4,15 +4,13 @@ This is a cross platform command line interface to set beautiful images as deskt
 *Current Features :*
 - Bing Homepage image as wallpaper
 - Random HD image from internet as wallpaper
+- Configurable topics for downloading images from internet
 
 *Upcoming Features :*
-- Configurable topics for downloading images from internet
+- ~~Configurable topics for downloading images from internet~~
 - AI (automatically set wallpaper based on the day, like Chrismas wallpaper for 25th Dec)
 
 Download the latest from the [releases](https://github.com/sudipmandal/any-os-wallpaper-cli/releases).
-
-You may need to install the dotnet core 3.1 runtime framework if not already installed
-[https://dotnet.microsoft.com/download/dotnet-core/3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 ### To set random wallpaper
 
